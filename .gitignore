@@ -1,0 +1,14 @@
+# Generated Excel/binary artifacts
+excel/*.xlsm
+excel/*.xlam
+exports/*
+!exports/.gitkeep
+
+# Runtime data stores and logs
+data/history.sqlite
+data/logs/*
+!data/logs/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
