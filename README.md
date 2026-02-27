@@ -38,15 +38,3 @@ Binary/generated artifacts are git-ignored to avoid push failures in environment
 ## Quick walkthrough artifact
 
 If you cannot run scripts locally, see `docs/SCRIPT_WALKTHROUGH_AND_EXAMPLE.md` for a captured run and sample report output.
-
-
-## Merge conflict note
-
-If a merge/rebase leaves conflict markers like `<<<<<<<`, `=======`, `>>>>>>>` in `README.md`, remove those markers and keep the final text block only.
-A quick check is:
-
-```bash
-rg -n "^(<<<<<<<|=======|>>>>>>>)" README.md
-```
-
-If the command prints nothing, the conflict is resolved.
