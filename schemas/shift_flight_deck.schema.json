@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shift Flight Deck Workbook Contract",
+  "type": "object",
+  "required": ["sheets", "tables"],
+  "properties": {
+    "sheets": {
+      "type": "array",
+      "items": {"type": "string"},
+      "contains": {"const": "Rules_Authoring"}
+    },
+    "tables": {
+      "type": "object",
+      "required": ["tblSchedule", "tblHourly", "tblDowntime", "tblRules"],
+      "properties": {
+        "tblRules": {
+          "type": "array",
+          "items": {"type": "string"},
+          "contains": {"const": "IfLogic"}
+        }
+      }
+    }
+  }
+}

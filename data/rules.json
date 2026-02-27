@@ -1,0 +1,46 @@
+{
+  "workbook": "/workspace/app/excel/Shift_Flight_Deck.xlsm",
+  "exported_at": "2026-02-27T07:50:08.627523",
+  "rules": [
+    {
+      "RuleID": "R1_UNDERPERFORM_STOPS",
+      "Enabled": "TRUE",
+      "Severity": "Action",
+      "Scope": "Line",
+      "Description": "Sustained underperformance with frequent stops",
+      "IfLogic": "CONSEC_BELOW(metric=\"TargetAttain\", threshold=0.70, hours=2, groupby=\"Line\") AND ROLLING_COUNT(table=\"Downtime\", window_hours=2, where=\"Line={Line}\", min=4)",
+      "ThenRecommendation": "Run rapid loss review and assign immediate support to top downtime cause.",
+      "ThenEscalation": "Notify area lead if persists for 2 more hours.",
+      "Thresholds": "{\"threshold\":0.70,\"min_stops\":4}",
+      "WindowHours": 2,
+      "ConsecutiveHours": 2,
+      "AppliesToLine": "*",
+      "AppliesToMachine": "*",
+      "AppliesToSKU": "*",
+      "Version": 1,
+      "LastEditedBy": "system",
+      "LastEditedDT": "2026-02-27T07:49",
+      "_sheet_row": 2
+    },
+    {
+      "RuleID": "R2_MISSING_STANDARD",
+      "Enabled": "TRUE",
+      "Severity": "Urgent",
+      "Scope": "Line",
+      "Description": "Standards missing for active run",
+      "IfLogic": "MISSING_STANDARD(groupby=\"Line,SKU_Resolved\")",
+      "ThenRecommendation": "Add standard immediately or switch to approved alternate SKU standard.",
+      "ThenEscalation": "Escalate to process engineer and planner.",
+      "Thresholds": "{}",
+      "WindowHours": 4,
+      "ConsecutiveHours": 1,
+      "AppliesToLine": "*",
+      "AppliesToMachine": "*",
+      "AppliesToSKU": "*",
+      "Version": 1,
+      "LastEditedBy": "system",
+      "LastEditedDT": "2026-02-27T07:49",
+      "_sheet_row": 3
+    }
+  ]
+}
