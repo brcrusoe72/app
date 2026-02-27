@@ -33,8 +33,3 @@ Then open workbook in Excel and use button macros on `Dash_Shift`.
 ## Binary artifact policy
 
 Binary/generated artifacts are git-ignored to avoid push failures in environments that reject binary diffs. Generate workbook/data locally via the scripts.
-
-
-## Quick walkthrough artifact
-
-If you cannot run scripts locally, see `docs/SCRIPT_WALKTHROUGH_AND_EXAMPLE.md` for a captured run and sample report output.
